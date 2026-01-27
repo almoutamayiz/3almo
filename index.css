@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;800;900&display=swap');
+
+/* 
+   تم إزالة @tailwind directives لأننا نستخدم CDN في index.html 
+   لضمان عمل التصميم فوراً دون الحاجة لانتظار عملية البناء في Vercel 
+*/
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.custom-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+  background-color: black;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none; /* منع السحب الزائد في الهواتف */
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: none !important;
+  -webkit-touch-callout: none;
+}
+
+/* خلفية منقطة احترافية */
+.bg-dots {
+  background-image: radial-gradient(rgba(255, 198, 51, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* تحسين التفاعل */
+button:active, .clickable:active {
+  transform: scale(0.97);
+  opacity: 0.8;
+}
+
+.section-entry {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Fallback animations */
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* الحفاظ على المساحة الآمنة في الهواتف الحديثة */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
